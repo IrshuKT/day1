@@ -14,23 +14,24 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 .header img {
     margin-right: 10px;
-    align-items: center;
-    text-align: center;
-
-
+   max-width: 100%;
+   height: auto;
 }
-
+.title{
+    text-align: center;
+}
 h1 {
     font-size: 60px;
     font-weight: 900;
     color: black;
     align-items: center;
     margin: 0;
-    padding-top: 40px;
+    padding: 0;
 }
 
 .tagline {
@@ -86,13 +87,6 @@ h3 {
     margin: 20px;
 }
 
-.contact {
-    text-align: center;
-    align-items: center;
-
-    color: black;
-}
-
 .first-brand,
 .second-brand,
 .third-brand,
@@ -118,10 +112,15 @@ h3 {
 .brand-text {
     max-width: 600px;
 }
-
+.contact {
+    text-align: center;
+    align-items: center; 
+    margin: 20px 0;
+    border-radius: 8px;
+    color: black;
+}
 
 .contact-form {
-
     align-items: center;
     border: 1px solid black;
     border-radius: 8px;
@@ -129,7 +128,6 @@ h3 {
     margin: auto;
     background-color: #a37113c0;
     color: black;
-
     padding: 10px;
 }
 
@@ -140,25 +138,46 @@ h3 {
     height: 30px;
     padding: 0;
 }
-
+.contact-form input,
+.contact-form textarea {
+    width: 50%; /* Full width inputs */
+    padding: 5px; /* Padding for inputs */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+}
+.submit button:hover {
+    background-color: #c65d00; /* Darker shade on hover */
+}
+.gallary-heading{
+    text-align: center;
+    color: black;
+}
 .img-gallary {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     margin-top: 20px;
     justify-content: center;
 }
 
 .img-gallary img {
-    height: 180px;
-
+    height: auto;
+    max-width: 100%;
+    margin: 5px;
+}
+/* ### Footer ### */
+footer{
+background-color: #cf8e00;
+padding: 20px 0;
+margin-top: 30px;
 }
 
 .footer-align{
-    margin-top: 30px;
     display:flex;
-    justify-content: space-between;
-    padding: 0;
-   
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 20px;
+    align-items: center;
+
 }
 
 .footer-align p{
@@ -166,21 +185,42 @@ h3 {
 }
 .copy-right{
     text-align: center;
-    margin: 0;
-    padding: 0;
+    margin:10px 0;
 }
 .logo{
-    position:relative;
-    margin-left: 100px;
-}
+   
+    margin-left: 0 20px;
+  }  
 .middle{
-    margin-left: 100px;
+    margin-left: 150px;
+    text-align: center;
 }
 .middle img{
    width: 30px;
-   margin-left: 20px;
+   margin: 0;
   
 }
+.middle h2{
+    color: black;
+}
+/*Header Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 30px; /* Even smaller font size for mobile */
+    }
+    
+    .header {
+        flex-direction: column; /* Stack logo and title vertically */
+        align-items: center; /* Center items */
+    }
+}
+/* Band Resoponsive*/
 
 @media (max-width: 768px) {
     .first-brand, .second-brand, .third-brand, .fourth-brand {
@@ -194,7 +234,11 @@ h3 {
     h1 {
         font-size: 40px; 
     }
-
+    .img-gallary{
+       
+        flex-direction: column;
+        align-items: center;
+    }
     .contact-form {
         width: 90%; 
     }
@@ -203,4 +247,48 @@ h3 {
         width: 100%;
     }
 }
+}
+@media (min-width: 1200px) {
+    .img-gallary img {
+        flex: 0 0 22%; /* Four images per row on large screens */
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .img-gallary img {
+        flex: 0 0 30%; /* Three images per row on medium screens */
+    }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+    .img-gallary img {
+        flex: 0 0 45%; /* Two images per row on smaller screens */
+    }
+}
+
+@media (max-width: 479px) {
+    .img-gallary img {
+        flex: 0 0 100%; /* One image per row on mobile screens */
+    }
+}
+/* ### Footer Responsive ###  */
+@media (max-width: 768px) {
+    .footer-align {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .logo, .middle, .address {
+        margin: 10px 0; /* Add margin for spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .middle img {
+        width: 25px; /* Smaller icon size for mobile */
+    }
+    
+    .middle h2 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+    }
 }
