@@ -181,3 +181,26 @@ h3 {
    margin-left: 20px;
   
 }
+
+@media (max-width: 768px) {
+    .first-brand, .second-brand, .third-brand, .fourth-brand {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .header img {
+        max-width: 50px; 
+
+    h1 {
+        font-size: 40px; 
+    }
+
+    .contact-form {
+        width: 90%; 
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+}
+}
